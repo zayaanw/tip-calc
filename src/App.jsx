@@ -9,6 +9,8 @@ function App() {
       <div>
         <Logo></Logo>
         <Container>
+          <h1 className="mx-4 my-4">Bill</h1>
+          <h1 className="mx-4 my-4">Select Tip %</h1>
           <TipButton />
         </Container>
       </div>
