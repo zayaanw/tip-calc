@@ -21,6 +21,7 @@ function App() {
             <TipButton percentage={50} />
             <TipButton percentage={"Custom"} />
           </div>
+          <h1 className="text-[#7f9c9f]">Number of People</h1>
         </Container>
       </div>
     </>
