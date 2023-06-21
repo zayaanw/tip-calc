@@ -2,6 +2,7 @@ import "./App.css";
 import TipButton from "./components/TipButton";
 import Logo from "./components/Logo";
 import Container from "./components/Container";
+import Bill from "./components/Bill";
 
 function App() {
   return (
@@ -9,9 +10,17 @@ function App() {
       <div>
         <Logo></Logo>
         <Container>
-          <h1 className="mx-4 my-4">Bill</h1>
-          <h1 className="mx-4 my-4">Select Tip %</h1>
-          <TipButton />
+          <h1>Bill</h1>
+          <Bill></Bill>
+          <h1>Select Tip %</h1>
+          <div className="grid grid-flow-row grid-cols-2 grid-rows-3 gap-x-8 gap-y-4">
+            <TipButton percentage={5} />
+            <TipButton percentage={10} />
+            <TipButton percentage={15} />
+            <TipButton percentage={25} />
+            <TipButton percentage={50} />
+            <TipButton percentage={"Custom"} />
+          </div>
         </Container>
       </div>
     </>

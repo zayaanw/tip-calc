@@ -1,10 +1,8 @@
-function TipButton() {
+function TipButton({ percentage }) {
   return (
-    <div className="flex justify-center">
-      <button className="w-48 rounded-lg border-2 border-solid bg-[#26c0ab] p-2 text-xl text-white">
-        5%
-      </button>
-    </div>
+    <button className="h-16 w-52 rounded-lg  bg-[#00494d] p-2 text-3xl text-white hover:bg-[#26c0ab]">
+      {percentage}%
+    </button>
   );
 }
 
