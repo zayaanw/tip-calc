@@ -10,9 +10,9 @@ function App() {
       <div>
         <Logo></Logo>
         <Container>
-          <h1>Bill</h1>
+          <h1 className="text-[#7f9c9f]">Bill</h1>
           <Bill></Bill>
-          <h1>Select Tip %</h1>
+          <h1 className="text-[#7f9c9f]">Select Tip %</h1>
           <div className="grid grid-flow-row grid-cols-2 grid-rows-3 gap-x-8 gap-y-4">
             <TipButton percentage={5} />
             <TipButton percentage={10} />
