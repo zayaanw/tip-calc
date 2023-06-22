@@ -14,7 +14,7 @@ function Total() {
         </p>
         <span className="text-3xl text-[#26c0ab]">$0</span>
       </div>
-      <button className="rounded-xl  bg-[#26c0ab] p-4 text-2xl uppercase">
+      <button className="rounded-md  bg-[#26c0ab] p-4 text-2xl uppercase">
         Reset
       </button>
     </div>

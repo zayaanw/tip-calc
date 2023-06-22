@@ -12,19 +12,25 @@ function App() {
       <div>
         <Logo></Logo>
         <Container>
-          <h1 className="text-[#7f9c9f]">Bill</h1>
-          <Bill img="src\assets\icon-dollar.svg" />
-          <h1 className="text-[#7f9c9f]">Select Tip %</h1>
-          <div className="grid grid-flow-row grid-cols-2 grid-rows-3 gap-x-8 gap-y-4">
-            <TipButton percentage={5} />
-            <TipButton percentage={10} />
-            <TipButton percentage={15} />
-            <TipButton percentage={25} />
-            <TipButton percentage={50} />
-            <CustomInput />
+          <div className="w-full">
+            <h1 className="mb-2 text-[#7f9c9f]">Bill</h1>
+            <Bill img="src\assets\icon-dollar.svg" />
           </div>
-          <h1 className="text-[#7f9c9f]">Number of People</h1>
-          <Bill img="src\assets\icon-person.svg" />
+          <div className="w-full">
+            <h1 className="mb-2 text-[#7f9c9f]">Select Tip %</h1>
+            <div className="grid grid-flow-row grid-cols-2 grid-rows-3 gap-x-8 gap-y-4">
+              <TipButton percentage={5} />
+              <TipButton percentage={10} />
+              <TipButton percentage={15} />
+              <TipButton percentage={25} />
+              <TipButton percentage={50} />
+              <CustomInput />
+            </div>
+          </div>
+          <div className="w-full">
+            <h1 className=" mb-2 text-[#7f9c9f]">Number of People</h1>
+            <Bill img="src\assets\icon-person.svg" />
+          </div>
           <Total></Total>
         </Container>
       </div>
