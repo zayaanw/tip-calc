@@ -4,6 +4,7 @@ import Logo from "./components/Logo";
 import Container from "./components/Container";
 import Bill from "./components/Bill";
 import Total from "./components/Total";
+import CustomInput from "./components/CustomInput";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
             <TipButton percentage={15} />
             <TipButton percentage={25} />
             <TipButton percentage={50} />
-            <TipButton percentage={"Custom"} />
+            <CustomInput />
           </div>
           <h1 className="text-[#7f9c9f]">Number of People</h1>
           <Bill img="src\assets\icon-person.svg" />
