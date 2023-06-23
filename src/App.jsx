@@ -39,6 +39,9 @@ function App() {
       tip: parseFloat(
         ((totalBill.total * converted) / totalBill.people).toFixed(2)
       ),
+      finalbill:
+        parseFloat(totalBill.total) +
+        parseFloat((totalBill.total * converted) / totalBill.people),
     });
   };
 
