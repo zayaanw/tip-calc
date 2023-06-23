@@ -27,8 +27,6 @@ function App() {
     });
   };
 
-  // Fix tip button not updating total
-
   const handleTip = (e) => {
     const converted = parseFloat(e.target.textContent) / 100;
 
