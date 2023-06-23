@@ -1,4 +1,4 @@
-function Bill({ img }) {
+function Bill({ img, handleBill }) {
   return (
     <label className="relative w-full">
       <span className="sr-only">Total amount</span>
@@ -11,6 +11,7 @@ function Bill({ img }) {
         type="number"
         name="total_bill"
         dir="rtl"
+        onChange={handleBill}
       />
     </label>
   );
