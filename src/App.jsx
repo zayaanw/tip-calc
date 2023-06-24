@@ -11,13 +11,12 @@ function App() {
   const [totalBill, setBill] = useState({
     total: 0,
     tip: 0,
-    people: 1,
     finalbill: 0,
   });
 
   const [tipPercentage, setPercentage] = useState(0);
 
-  const [totalPeople, setPeople] = useState(0);
+  const [totalPeople, setPeople] = useState(1);
 
   const handleBill = (e) => {
     setBill({
@@ -25,7 +24,9 @@ function App() {
       total: parseFloat(e.target.value),
       tip: parseFloat((e.target.value * tipPercentage).toFixed(2)),
       finalbill:
-        parseFloat(e.target.value * tipPercentage) + parseFloat(e.target.value),
+        (parseFloat(e.target.value * tipPercentage) +
+          parseFloat(e.target.value)) /
+        totalPeople,
     });
   };
 
@@ -36,17 +37,18 @@ function App() {
 
     setBill({
       ...totalBill,
-      tip: parseFloat(
-        ((totalBill.total * converted) / totalBill.people).toFixed(2)
-      ),
+      tip: parseFloat((totalBill.total * converted).toFixed(2)),
       finalbill:
-        parseFloat(totalBill.total) +
-        parseFloat((totalBill.total * converted) / totalBill.people),
+        parseFloat(totalBill.total) + parseFloat(totalBill.total * converted),
     });
   };
 
   const handlePeople = (e) => {
-    setPeople(e.target.value);
+    e.target.value === "0"
+      ? setPeople(1)
+      : setPeople(parseFloat(e.target.value));
+
+    setBill({ ...totalBill, finalbill: totalBill.total / e.target.value });
   };
 
   const handleReset = () => {
