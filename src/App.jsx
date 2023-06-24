@@ -17,6 +17,8 @@ function App() {
 
   const [tipPercentage, setPercentage] = useState(0);
 
+  const [totalPeople, setPeople] = useState(0);
+
   const handleBill = (e) => {
     setBill({
       ...totalBill,
@@ -43,6 +45,10 @@ function App() {
     });
   };
 
+  const handlePeople = (e) => {
+    setPeople(e.target.value);
+  };
+
   const handleReset = () => {
     setBill(0);
   };
@@ -54,7 +60,11 @@ function App() {
         <Container>
           <div className="w-full">
             <h1 className="mb-2 text-[#7f9c9f]">Bill</h1>
-            <Bill handleBill={handleBill} img="src\assets\icon-dollar.svg" />
+            <Bill
+              handleChange={handleBill}
+              img="src\assets\icon-dollar.svg"
+              personSet={false}
+            />
           </div>
           <div className="w-full">
             <h1 className="mb-2 text-[#7f9c9f]">Select Tip %</h1>
@@ -69,7 +79,11 @@ function App() {
           </div>
           <div className="w-full">
             <h1 className=" mb-2 text-[#7f9c9f]">Number of People</h1>
-            <Bill img="src\assets\icon-person.svg" />
+            <Bill
+              handleChange={handlePeople}
+              img="src\assets\icon-person.svg"
+              personSet={true}
+            />
           </div>
           <Total totalBill={totalBill} handleReset={handleReset}></Total>
         </Container>
