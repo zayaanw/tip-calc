@@ -22,7 +22,8 @@ function App() {
     setBill({
       ...totalBill,
       total: parseFloat(e.target.value),
-      tip: parseFloat((e.target.value * tipPercentage).toFixed(2)),
+      tip:
+        parseFloat((e.target.value * tipPercentage).toFixed(2)) / totalPeople,
       finalbill:
         (parseFloat(e.target.value * tipPercentage) +
           parseFloat(e.target.value)) /
@@ -37,9 +38,11 @@ function App() {
 
     setBill({
       ...totalBill,
-      tip: parseFloat((totalBill.total * converted).toFixed(2)),
+      tip: parseFloat((totalBill.total * converted).toFixed(2) / totalPeople),
       finalbill:
-        parseFloat(totalBill.total) + parseFloat(totalBill.total * converted),
+        (parseFloat(totalBill.total) +
+          parseFloat(totalBill.total * converted)) /
+        totalPeople,
     });
   };
 
@@ -47,8 +50,14 @@ function App() {
     e.target.value === "0"
       ? setPeople(1)
       : setPeople(parseFloat(e.target.value));
-
-    setBill({ ...totalBill, finalbill: totalBill.total / e.target.value });
+    setBill({
+      ...totalBill,
+      tip: parseFloat(totalBill.total * tipPercentage) / e.target.value,
+      finalbill:
+        (parseFloat(totalBill.total) +
+          parseFloat(totalBill.total * tipPercentage)) /
+        e.target.value,
+    });
   };
 
   const handleReset = () => {
@@ -73,7 +82,7 @@ function App() {
             <div className="grid grid-flow-row grid-cols-2 grid-rows-3 gap-x-8 gap-y-4">
               <TipButton handleTip={handleTip} percentage={5} />
               <TipButton handleTip={handleTip} percentage={10} />
-              <TipButton percentage={15} />
+              <TipButton handleTip={handleTip} percentage={15} />
               <TipButton percentage={25} />
               <TipButton percentage={50} />
               <CustomInput />
