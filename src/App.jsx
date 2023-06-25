@@ -19,20 +19,38 @@ function App() {
   const [totalPeople, setPeople] = useState(1);
 
   const handleBill = (e) => {
-    setBill({
-      ...totalBill,
-      total: parseFloat(e.target.value),
-      tip:
-        parseFloat((e.target.value * tipPercentage).toFixed(2)) / totalPeople,
-      finalbill:
-        (parseFloat(e.target.value * tipPercentage) +
-          parseFloat(e.target.value)) /
-        totalPeople,
-    });
+    e.target.value <= 0
+      ? setBill({ ...totalBill, total: 0, finalbill: 0 })
+      : setBill({
+          ...totalBill,
+          total: parseFloat(e.target.value),
+          tip:
+            parseFloat((e.target.value * tipPercentage).toFixed(2)) /
+            totalPeople,
+          finalbill:
+            (parseFloat(e.target.value * tipPercentage) +
+              parseFloat(e.target.value)) /
+            totalPeople,
+        });
   };
 
   const handleTip = (e) => {
     const converted = parseFloat(e.target.textContent) / 100;
+
+    setPercentage(converted);
+
+    setBill({
+      ...totalBill,
+      tip: parseFloat((totalBill.total * converted).toFixed(2) / totalPeople),
+      finalbill:
+        (parseFloat(totalBill.total) +
+          parseFloat(totalBill.total * converted)) /
+        totalPeople,
+    });
+  };
+
+  const handleCustomTip = (e) => {
+    const converted = parseFloat(e.target.value) / 100;
 
     setPercentage(converted);
 
@@ -88,7 +106,7 @@ function App() {
               <TipButton handleTip={handleTip} percentage={15} />
               <TipButton percentage={25} />
               <TipButton percentage={50} />
-              <CustomInput />
+              <CustomInput handleTip={handleCustomTip} />
             </div>
           </div>
           <div className="w-full">
