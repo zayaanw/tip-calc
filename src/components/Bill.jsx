@@ -1,9 +1,8 @@
-function Bill({ img, handleChange, minimum, title }) {
+function Bill({ img, handleChange, minimum, title, value }) {
   return (
     <>
       <h1 className=" mb-2 text-[#7f9c9f]">{title}</h1>
       <label className="relative w-full">
-        <span className="sr-only">Total amount</span>
         <span className="absolute inset-y-0 left-2 flex items-center pl-2">
           <img src={img}></img>
         </span>
@@ -16,6 +15,7 @@ function Bill({ img, handleChange, minimum, title }) {
           dir="rtl"
           min={minimum}
           onChange={handleChange}
+          value={value}
         />
         <p className="invisible absolute -top-8 right-2 text-red-600 peer-invalid:visible">
           Please enter a valid number

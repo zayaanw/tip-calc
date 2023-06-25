@@ -87,7 +87,7 @@ function App() {
 
   return (
     <>
-      <div className="md:mt-12 md:flex md:flex-col md:items-center md:justify-center md:gap-y-20">
+      <div className="md:mt-12 md:flex md:flex-col md:items-center md:justify-center md:gap-y-16">
         <Logo></Logo>
         <Container>
           <div className="w-full">
@@ -96,6 +96,7 @@ function App() {
               handleChange={handleBill}
               img="src\assets\icon-dollar.svg"
               minimum={0}
+              value={totalBill.total}
             />
           </div>
           <div className="w-full">
@@ -115,6 +116,7 @@ function App() {
               handleChange={handlePeople}
               img="src\assets\icon-person.svg"
               minimum={1}
+              value={totalPeople}
             />
           </div>
           <Total totalBill={totalBill} handleReset={handleReset}></Total>
