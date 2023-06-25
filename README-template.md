@@ -12,7 +12,6 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
       - [Desktop](#desktop)
       - [Mobile](#mobile)
     - [Links](#links)
-  - [My process](#my-process)
     - [Built with](#built-with)
     - [What I learned](#what-i-learned)
     - [Useful resources](#useful-resources)
@@ -40,10 +39,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
-
-## My process
+- Solution URL: [Will update once submitted on frontend mentor](https://your-solution-url.com)
+- Live Site URL: [Site deployed on Vercel](https://tip-calc-opal.vercel.app/))
 
 ### Built with
 
