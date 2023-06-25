@@ -47,21 +47,24 @@ function App() {
   };
 
   const handlePeople = (e) => {
-    e.target.value === "0"
-      ? setPeople(1)
-      : setPeople(parseFloat(e.target.value));
-    setBill({
-      ...totalBill,
-      tip: parseFloat(totalBill.total * tipPercentage) / e.target.value,
-      finalbill:
-        (parseFloat(totalBill.total) +
-          parseFloat(totalBill.total * tipPercentage)) /
-        e.target.value,
-    });
+    e.target.value <= 0 ? setPeople(1) : setPeople(parseFloat(e.target.value));
+
+    e.target.value <= 0
+      ? setBill({ ...totalBill, tip: 0, finalbill: 0 })
+      : setBill({
+          ...totalBill,
+          tip: parseFloat(totalBill.total * tipPercentage) / e.target.value,
+          finalbill:
+            (parseFloat(totalBill.total) +
+              parseFloat(totalBill.total * tipPercentage)) /
+            e.target.value,
+        });
   };
 
   const handleReset = () => {
-    setBill(0);
+    setBill({ ...totalBill, total: 0, tip: 0, finalbill: 0 });
+    setPeople(1);
+    setPercentage(0);
   };
 
   return (
@@ -70,11 +73,11 @@ function App() {
         <Logo></Logo>
         <Container>
           <div className="w-full">
-            <h1 className="mb-2 text-[#7f9c9f]">Bill</h1>
             <Bill
+              title="Bill"
               handleChange={handleBill}
               img="src\assets\icon-dollar.svg"
-              personSet={false}
+              minimum={0}
             />
           </div>
           <div className="w-full">
@@ -89,11 +92,11 @@ function App() {
             </div>
           </div>
           <div className="w-full">
-            <h1 className=" mb-2 text-[#7f9c9f]">Number of People</h1>
             <Bill
+              title="Number of People"
               handleChange={handlePeople}
               img="src\assets\icon-person.svg"
-              personSet={true}
+              minimum={1}
             />
           </div>
           <Total totalBill={totalBill} handleReset={handleReset}></Total>
