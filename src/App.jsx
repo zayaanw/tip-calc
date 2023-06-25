@@ -9,7 +9,7 @@ import { useState } from "react";
 
 function App() {
   const [totalBill, setBill] = useState({
-    total: 0,
+    total: "",
     tip: 0,
     finalbill: 0,
   });
