@@ -98,7 +98,7 @@ function App() {
             <Bill
               title="Bill"
               handleChange={handleBill}
-              img="src\assets\icon-dollar.svg"
+              img="/icon-dollar.svg"
               minimum={0}
               value={totalBill.total}
             />
@@ -109,8 +109,8 @@ function App() {
               <TipButton handleTip={handleTip} percentage={5} />
               <TipButton handleTip={handleTip} percentage={10} />
               <TipButton handleTip={handleTip} percentage={15} />
-              <TipButton percentage={25} />
-              <TipButton percentage={50} />
+              <TipButton handleTip={handleTip} percentage={25} />
+              <TipButton handleTip={handleTip} percentage={50} />
               <CustomInput handleTip={handleCustomTip} />
             </div>
           </div>
@@ -118,7 +118,7 @@ function App() {
             <Bill
               title="Number of People"
               handleChange={handlePeople}
-              img="src\assets\icon-person.svg"
+              img="/icon-person.svg"
               minimum={1}
               value={totalPeople}
             />
