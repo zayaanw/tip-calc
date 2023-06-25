@@ -18,6 +18,8 @@ function App() {
 
   const [totalPeople, setPeople] = useState(1);
 
+  const [btnReset, setbtnReset] = useState(true);
+
   const handleBill = (e) => {
     e.target.value <= 0
       ? setBill({ ...totalBill, total: 0, finalbill: 0 })
@@ -32,6 +34,7 @@ function App() {
               parseFloat(e.target.value)) /
             totalPeople,
         });
+    setbtnReset(false);
   };
 
   const handleTip = (e) => {
@@ -83,6 +86,7 @@ function App() {
     setBill({ ...totalBill, total: 0, tip: 0, finalbill: 0 });
     setPeople(1);
     setPercentage(0);
+    setbtnReset(true);
   };
 
   return (
@@ -119,7 +123,11 @@ function App() {
               value={totalPeople}
             />
           </div>
-          <Total totalBill={totalBill} handleReset={handleReset}></Total>
+          <Total
+            disabled={btnReset}
+            totalBill={totalBill}
+            handleReset={handleReset}
+          ></Total>
         </Container>
       </div>
     </>

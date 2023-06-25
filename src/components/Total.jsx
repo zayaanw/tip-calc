@@ -1,4 +1,4 @@
-function Total({ totalBill, handleReset }) {
+function Total({ totalBill, handleReset, disabled }) {
   return (
     <div
       className="flex w-full flex-col gap-6 rounded-2xl bg-[#00494d] px-4 pb-7 pt-10 
@@ -23,7 +23,8 @@ function Total({ totalBill, handleReset }) {
       </div>
       <button
         onClick={handleReset}
-        className="rounded-md  bg-[#26c0ab] p-4 text-2xl uppercase md:mt-auto"
+        className="rounded-md  bg-[#26c0ab] p-4 text-2xl uppercase disabled:opacity-20 md:mt-auto"
+        disabled={disabled}
       >
         Reset
       </button>
