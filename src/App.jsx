@@ -87,7 +87,7 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className="md:mt-12 md:flex md:flex-col md:items-center md:justify-center md:gap-y-20">
         <Logo></Logo>
         <Container>
           <div className="w-full">
@@ -100,7 +100,7 @@ function App() {
           </div>
           <div className="w-full">
             <h1 className="mb-2 text-[#7f9c9f]">Select Tip %</h1>
-            <div className="grid grid-flow-row grid-cols-2 grid-rows-3 gap-x-8 gap-y-4">
+            <div className="grid grid-flow-row grid-cols-2 grid-rows-3 gap-x-8 gap-y-4 md:mt-7 md:grid-cols-3 md:grid-rows-2">
               <TipButton handleTip={handleTip} percentage={5} />
               <TipButton handleTip={handleTip} percentage={10} />
               <TipButton handleTip={handleTip} percentage={15} />
@@ -109,7 +109,7 @@ function App() {
               <CustomInput handleTip={handleCustomTip} />
             </div>
           </div>
-          <div className="w-full">
+          <div className="w-full md:self-center">
             <Bill
               title="Number of People"
               handleChange={handlePeople}

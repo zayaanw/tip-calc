@@ -1,6 +1,9 @@
 function Total({ totalBill, handleReset }) {
   return (
-    <div className="container flex flex-col gap-6 rounded-2xl bg-[#00494d] px-4 pb-7 pt-10 md:row-span-3 md:h-full">
+    <div
+      className="container flex flex-col gap-6 rounded-2xl bg-[#00494d] px-4 pb-7 pt-10 
+    md:row-span-3 md:h-full md:w-full md:p-10"
+    >
       <div className="flex justify-between">
         <p className=" text-white">
           Tip Amount <br />{" "}
@@ -20,7 +23,7 @@ function Total({ totalBill, handleReset }) {
       </div>
       <button
         onClick={handleReset}
-        className="rounded-md  bg-[#26c0ab] p-4 text-2xl uppercase"
+        className="rounded-md  bg-[#26c0ab] p-4 text-2xl uppercase md:mt-auto"
       >
         Reset
       </button>
