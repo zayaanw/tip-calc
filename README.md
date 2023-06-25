@@ -31,11 +31,11 @@ Users should be able to:
 
 #### Desktop
 
-![Desktop Design](public\tipping-calc-desktop.png)
+![Desktop Design](./public/tipping-calc-desktop.png)
 
 #### Mobile
 
-![Desktop Design](public\tipping-calc-mobile.png)
+![Desktop Design](./public/tipping-calc-mobile.png)
 
 ### Links
 
